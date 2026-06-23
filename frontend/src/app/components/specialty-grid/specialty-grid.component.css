@@ -1,0 +1,54 @@
+/* TITLE */
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 30px 0;
+  color: var(--primary);
+}
+
+/* GRID */
+.specialty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* CARD */
+.specialty-card {
+  background: white;
+  padding: 25px 15px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #eef2ff;
+}
+
+/* HOVER EFFECT */
+.specialty-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  background: #f8fafc;
+}
+
+/* ICON */
+.icon {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+/* TITLE */
+.specialty-card h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #1e293b;
+}
+
+/* DESCRIPTION */
+.specialty-card p {
+  font-size: 12px;
+  color: #64748b;
+}

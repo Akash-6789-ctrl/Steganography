@@ -1,0 +1,150 @@
+.clinic-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: var(--background);
+  font-family: "Poppins", sans-serif;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.hero-icon {
+  font-size: 70px;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.hero-section h2 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.search-card {
+  max-width: 850px;
+  margin: 0 auto 40px;
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.search-box {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.search-icon {
+  color: var(--primary);
+  font-size: 28px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 14px 18px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.search-box input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.search-box button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  background: var(--primary);
+  color: white;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  transform: translateY(-2px);
+  background: #1d4ed8;
+}
+
+.clinics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.clinic-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: 0.3s;
+}
+
+.clinic-card:hover {
+  transform: translateY(-5px);
+}
+
+.clinic-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.hospital-icon {
+  color: var(--secondary);
+  font-size: 32px;
+}
+
+.clinic-header h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.clinic-info p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
+  color: #475569;
+}
+
+.clinic-info .material-icons {
+  color: var(--primary);
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box input,
+  .search-box button {
+    width: 100%;
+  }
+
+  .hero-section h2 {
+    font-size: 1.8rem;
+  }
+}

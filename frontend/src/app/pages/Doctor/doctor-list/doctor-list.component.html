@@ -1,0 +1,37 @@
+<h2>Doctors List</h2>
+<br /><br />
+
+<table border="1" *ngIf="doctors.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Specialization</th>
+      <th>Qualification</th>
+      <th>Experience</th>
+      <th>Availability</th>
+      <th *ngIf="isAdmin()">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let doctor of doctors">
+      <td>{{ doctor.id }}</td>
+      <td>{{ doctor.name }}</td>
+      <td>{{ doctor.email }}</td>
+      <td>{{ doctor.specialization }}</td>
+      <td>{{ doctor.qualification }}</td>
+      <td>{{ doctor.experience }}</td>
+      <td>{{ doctor.availability }}</td>
+
+      <td *ngIf="isAdmin()">
+        <button (click)="editDoctor(doctor.id)">Edit</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button (click)="deleteDoctor(doctor.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="doctors.length === 0">No doctors found.</p>

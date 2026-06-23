@@ -1,0 +1,21 @@
+<div class="video-consult-page">
+  <h2>Request Video Consultation</h2>
+  <p>Select any doctor and send a video consultation request.</p>
+
+  <div *ngIf="doctors.length === 0" class="no-doctors">
+    No doctors available right now.
+  </div>
+
+  <div class="doctor-grid" *ngIf="doctors.length > 0">
+    <div class="doctor-card" *ngFor="let doctor of doctors">
+      <h3>{{ doctor.name }}</h3>
+      <p><strong>Specialization:</strong> {{ doctor.specialization }}</p>
+      <p *ngIf="doctor.experience"><strong>Experience:</strong> {{ doctor.experience }} years</p>
+      <p *ngIf="doctor.hospitalName"><strong>Hospital:</strong> {{ doctor.hospitalName }}</p>
+
+      <button (click)="requestVideoConsult(doctor)">
+        Request Video Consult
+      </button>
+    </div>
+  </div>
+</div>

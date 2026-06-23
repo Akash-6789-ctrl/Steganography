@@ -1,0 +1,28 @@
+<div class="card">
+  <h2>Register</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Full Name</label>
+      <input [(ngModel)]="fullName" name="fullName" required>
+    </div>
+    <div class="form-group">
+      <label>Username</label>
+      <input [(ngModel)]="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" [(ngModel)]="password" name="password" required>
+    </div>
+    <div class="form-group">
+      <label>Role</label>
+      <select [(ngModel)]="role" name="role">
+        <option value="ADMIN">Admin</option>
+        <option value="DOCTOR">Doctor</option>
+        <option value="PATIENT">Patient</option>
+      </select>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+  <p *ngIf="error" style="color: darkred; margin-top: 8px;">{{ error }}</p>
+</div>
+

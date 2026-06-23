@@ -1,0 +1,38 @@
+<h2 class="section-title">Top Doctors</h2>
+
+<div class="doctor-grid">
+
+  <div class="doctor-card" *ngFor="let doctor of doctors; let i = index">
+
+    <div class="doctor-img-wrapper">
+      <img
+        [src]="doctorImages[i % doctorImages.length]"
+        alt="Doctor"
+      >
+    </div>
+
+    <div class="doctor-info">
+
+      <h3>{{doctor.name}}</h3>
+
+      <p class="specialization">
+        {{doctor.specialization}}
+      </p>
+
+      <p class="experience">
+        {{doctor.experience}} Years Experience
+      </p>
+
+      <p class="availability">
+        {{doctor.availability}}
+      </p>
+
+      <button>
+        Book Appointment
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

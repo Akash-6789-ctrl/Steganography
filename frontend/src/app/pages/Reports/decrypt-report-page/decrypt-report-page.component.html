@@ -1,0 +1,59 @@
+<div class="decrypt-container">
+
+  <div class="card">
+
+    <div class="header-section">
+      <div class="icon-circle">
+        <span class="material-icons">security</span>
+      </div>
+
+      <h2>Decrypt Medical Report</h2>
+
+      <p>Securely access encrypted patient reports</p>
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label>Report ID</label>
+        <input
+          type="number"
+          [(ngModel)]="reportId"
+          name="reportId"
+          placeholder="Enter Report ID"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label>Secret Key</label>
+        <input
+          [(ngModel)]="secretKey"
+          name="secretKey"
+          type="password"
+          placeholder="Enter Secret Key"
+          required>
+      </div>
+
+      <button type="submit">
+        <span class="material-icons">lock_open</span>
+        Decrypt Report
+      </button>
+
+    </form>
+
+    <p class="message">{{ message }}</p>
+
+    <div *ngIf="decryptedContent" class="result-card">
+
+      <div class="result-header">
+        <span class="material-icons">description</span>
+        <h3>Decrypted Report</h3>
+      </div>
+
+      <pre>{{ decryptedContent }}</pre>
+
+    </div>
+
+  </div>
+
+</div>

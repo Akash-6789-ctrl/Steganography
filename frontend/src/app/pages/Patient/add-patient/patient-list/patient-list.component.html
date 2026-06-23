@@ -1,0 +1,35 @@
+<h2>Patients List</h2>
+
+<table border="1" *ngIf="patients.length > 0">
+
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Full Name</th>
+      <th>Username</th>
+      <th>Medical ID</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let p of patients">
+      <td>{{ p.id }}</td>
+      <td>{{ p.user.fullName }}</td>
+      <td>{{ p.user.username }}</td>
+      <td>{{ p.medicalId }}</td>
+
+      <td>
+        <button [routerLink]="['/patients/edit', p.id]">
+          Edit
+        </button>
+
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+
+<p *ngIf="patients.length === 0">
+  No patients found.
+</p>

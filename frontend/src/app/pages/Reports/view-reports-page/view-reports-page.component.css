@@ -1,0 +1,153 @@
+.reports-container {
+  min-height: 100vh;
+  background: var(--background);
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 1000px;
+  background: var(--card-bg);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.header-section {
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    #3b82f6
+  );
+  padding: 32px;
+  text-align: center;
+}
+
+.icon-circle {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 15px;
+
+  background: rgba(255,255,255,0.15);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle .material-icons {
+  color: white;
+  font-size: 42px;
+}
+
+.header-section h2 {
+  color: white;
+  margin: 0;
+  font-size: 30px;
+}
+
+.header-section p {
+  color: rgba(255,255,255,0.85);
+  margin-top: 10px;
+}
+
+.message {
+  padding: 20px 30px 0;
+  text-align: center;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.table-wrapper {
+  padding: 30px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #eff6ff;
+}
+
+th {
+  text-align: left;
+  padding: 18px;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+td {
+  padding: 18px;
+  border-bottom: 1px solid #e2e8f0;
+  color: var(--text);
+}
+
+tbody tr {
+  transition: 0.3s ease;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+.report-id {
+  background: rgba(37,99,235,0.1);
+  color: var(--primary);
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.file-badge {
+  background: rgba(16,185,129,0.1);
+  color: var(--secondary);
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-state .material-icons {
+  font-size: 70px;
+  color: #cbd5e1;
+}
+
+.empty-state h3 {
+  margin-top: 15px;
+  color: var(--text);
+}
+
+.empty-state p {
+  color: #64748b;
+}
+
+@media (max-width: 768px) {
+
+  .table-wrapper {
+    padding: 15px;
+  }
+
+  th,
+  td {
+    padding: 12px;
+  }
+
+  .header-section {
+    padding: 24px;
+  }
+
+}

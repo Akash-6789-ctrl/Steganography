@@ -1,0 +1,57 @@
+/* SECTION */
+.trust-section {
+  padding: 60px 20px;
+  background: #f8fafc;
+  text-align: center;
+}
+
+/* TITLE */
+.trust-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--primary);
+}
+
+/* GRID */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* CARD */
+.trust-card {
+  background: white;
+  padding: 25px 20px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  transition: 0.3s ease;
+  border: 1px solid #eef2ff;
+}
+
+/* HOVER */
+.trust-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* ICON */
+.trust-card .icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+.trust-card h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #1e293b;
+}
+
+.trust-card p {
+  font-size: 13px;
+  color: #64748b;
+}

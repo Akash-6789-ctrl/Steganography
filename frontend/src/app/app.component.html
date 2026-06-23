@@ -1,0 +1,52 @@
+<div class="app-container">
+  <div class="navbar">
+    <a routerLink="/" class="logo">
+      <h3>🏥 {{ title }}</h3>
+    </a>
+
+    <div class="nav-links">
+      <ng-container *ngIf="!auth.isLoggedIn()">
+        <a routerLink="/login">Login</a>
+        <a routerLink="/register">Register</a>
+      </ng-container>
+
+      <ng-container *ngIf="auth.isLoggedIn()">
+        <span class="user-badge">
+          {{ user?.fullName }} ({{ user?.role }})
+        </span>
+
+        <ng-container *ngIf="user?.role === 'ADMIN'">
+          <a routerLink="/admin">Admin Dashboard</a>
+        </ng-container>
+
+        <ng-container *ngIf="user?.role === 'DOCTOR'">
+          <a routerLink="/doctor">Dashboard</a>
+          <a routerLink="/doctor/upload">Upload Report</a>
+          <a routerLink="/doctor-appointments">Appointments</a>
+        </ng-container>
+
+        <ng-container *ngIf="user?.role === 'PATIENT'">
+          <a routerLink="/book-appointment">Book Appointment</a>
+          <a routerLink="/patient">Dashboard</a>
+          <a routerLink="/patient/reports">Reports</a>
+          <a routerLink="/patient/decrypt">Decrypt</a>
+        </ng-container>
+
+        <a
+          class="logout"
+          href="#"
+          (click)="auth.logout(); $event.preventDefault()"
+        >
+          Logout
+        </a>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="page">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- ✅ ONLY CHANGE: FOOTER ADDED HERE -->
+  <app-footer *ngIf="showFooter"></app-footer>
+</div>

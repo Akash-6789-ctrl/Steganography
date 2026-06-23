@@ -1,0 +1,43 @@
+<h2>Add Doctor</h2>
+
+<form (ngSubmit)="saveDoctor()">
+  <label>Name:</label>
+  <input type="text" [(ngModel)]="doctor.name" name="name" />
+
+  <br /><br />
+
+  <label>Email:</label>
+  <input type="email" [(ngModel)]="doctor.email" name="email" />
+
+  <br /><br />
+
+  <label>Specialization:</label>
+  <input
+    type="text"
+    [(ngModel)]="doctor.specialization"
+    name="specialization"
+  />
+
+  <br /><br />
+
+  <label>Qualification:</label>
+  <input type="text" [(ngModel)]="doctor.qualification" name="qualification" />
+
+  <br /><br />
+
+  <label>Experience:</label>
+  <input type="number" [(ngModel)]="doctor.experience" name="experience" />
+
+  <br /><br />
+
+  <label>Available:</label>
+  <input
+    type="checkbox"
+    [(ngModel)]="doctor.availability"
+    name="availability"
+  />
+
+  <br /><br />
+
+  <button type="submit">Save Doctor</button>
+</form>

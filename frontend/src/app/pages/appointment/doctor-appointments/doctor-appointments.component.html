@@ -1,0 +1,76 @@
+<h2>Doctor Appointments</h2>
+
+<table class="appointments-table">
+
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Patient</th>
+      <th>Reason</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr *ngFor="let a of appointments">
+
+      <td>{{ a.appointmentDate }}</td>
+
+      <td>{{ a.patientName }}</td>
+
+      <td>{{ a.reason }}</td>
+
+      <td>
+        <span
+          [class.pending]="a.status === 'PENDING'"
+          [class.approved]="a.status === 'APPROVED'"
+          [class.rejected]="a.status === 'REJECTED'">
+
+          {{ a.status }}
+
+        </span>
+      </td>
+
+      <td>
+
+        <button
+          *ngIf="a.status === 'PENDING'"
+          (click)="approve(a.id)"
+          class="approve-btn">
+
+          Approve
+
+        </button>
+
+        <button
+          *ngIf="a.status === 'PENDING'"
+          (click)="reject(a.id)"
+          class="reject-btn">
+
+          Reject
+
+        </button>
+
+        <a
+          *ngIf="a.status === 'APPROVED'"
+          [href]="a.meetingLink"
+          target="_blank"
+          class="meeting-btn">
+
+          Start Consultation
+
+        </a>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+
+</table>
+
+<p *ngIf="appointments.length === 0">
+  No appointments found.
+</p>

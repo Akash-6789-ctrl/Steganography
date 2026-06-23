@@ -1,0 +1,27 @@
+<h2>Edit Patient</h2>
+
+<form (ngSubmit)="updatePatient()">
+
+  <label>Username:</label>
+  <input [(ngModel)]="patient.username" name="username">
+
+  <br><br>
+
+  <label>Password (leave empty if no change):</label>
+  <input type="password" [(ngModel)]="patient.password" name="password">
+
+  <br><br>
+
+  <label>Full Name:</label>
+  <input [(ngModel)]="patient.fullName" name="fullName">
+
+  <br><br>
+
+  <label>Medical ID:</label>
+  <input [(ngModel)]="patient.medicalId" name="medicalId">
+
+  <br><br>
+
+  <button type="submit">Update Patient</button>
+
+</form>

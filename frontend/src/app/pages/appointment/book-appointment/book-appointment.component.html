@@ -1,0 +1,80 @@
+<div class="appointment-page">
+
+  <div class="appointment-card">
+
+    <div class="header-section">
+      <div class="icon-circle">
+        🏥
+      </div>
+
+      <h2>Book Appointment</h2>
+
+      <p>
+        Schedule your consultation with our expert doctors
+      </p>
+    </div>
+
+    <div class="form-section">
+
+      <div class="form-group">
+        <label>Select Doctor</label>
+
+        <select [(ngModel)]="selectedDoctorId">
+          <option value="">Choose a Doctor</option>
+
+          <option
+            *ngFor="let d of doctors"
+            [value]="d.id"
+          >
+            {{ d.name }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Appointment Date</label>
+
+        <input
+          type="date"
+          [(ngModel)]="date"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Reason for Visit</label>
+
+        <textarea
+          rows="4"
+          placeholder="Describe your symptoms or reason for consultation..."
+          [(ngModel)]="reason"
+        ></textarea>
+      </div>
+
+      <button
+        class="book-btn"
+        (click)="book()"
+      >
+        Book Appointment
+      </button>
+
+    </div>
+
+    <div class="features">
+
+      <div class="feature">
+        ✓ Verified Doctors
+      </div>
+
+      <div class="feature">
+        ✓ Instant Confirmation
+      </div>
+
+      <div class="feature">
+        ✓ Secure Booking
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

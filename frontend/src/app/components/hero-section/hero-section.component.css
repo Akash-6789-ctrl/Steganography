@@ -1,0 +1,115 @@
+/* HERO BACKGROUND */
+.hero {
+  background: linear-gradient(135deg, #0f172a, #4c5362);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: 0 0 40px 40px;
+}
+
+/* CONTENT */
+.hero-content {
+  max-width: 750px;
+  margin: auto;
+}
+
+/* TITLE */
+.hero h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero h1 span {
+  color: #facc15;
+}
+
+/* PARAGRAPH */
+.hero p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+/* SEARCH BOX */
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.search-box input {
+  width: 60%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px 0 0 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-btn {
+  padding: 14px 20px;
+  border: none;
+  background: #111827;
+  color: white;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.primary-btn {
+  background: #10b981;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 2px solid white;
+  padding: 12px 20px;
+  border-radius: 10px;
+}
+
+/* HOVER EFFECTS */
+button {
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box input {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .search-btn {
+    border-radius: 10px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}

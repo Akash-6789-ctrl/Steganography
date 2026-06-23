@@ -1,0 +1,59 @@
+<div class="contact-container">
+
+  <h1>Contact Us</h1>
+
+  <div class="contact-info">
+
+    <div class="card">
+      <h3>Address</h3>
+      <p>171 Health Street, Chennai, Tamil Nadu</p>
+    </div>
+
+    <div class="card">
+      <h3>Phone</h3>
+      <p>+91 72005 78924</p>
+    </div>
+
+    <div class="card">
+      <h3>Email</h3>
+      <p>akashiever&#64;gmail.com</p>
+    </div>
+
+  </div>
+
+  <div class="contact-form">
+
+    <h2>Send us a Message</h2>
+
+    <input
+      type="text"
+      placeholder="Your Name"
+      [(ngModel)]="contact.name"
+      name="name">
+
+    <input
+      type="email"
+      placeholder="Your Email"
+      [(ngModel)]="contact.email"
+      name="email">
+
+    <input
+      type="text"
+      placeholder="Subject"
+      [(ngModel)]="contact.subject"
+      name="subject">
+
+    <textarea
+      rows="5"
+      placeholder="Message"
+      [(ngModel)]="contact.message"
+      name="message">
+    </textarea>
+
+    <button type="button" (click)="sendMessage()">
+      Send Message
+    </button>
+
+  </div>
+
+</div>

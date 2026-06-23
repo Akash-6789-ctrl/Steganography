@@ -1,0 +1,72 @@
+<div class="upload-container">
+
+  <div class="card">
+
+    <div class="header-section">
+
+      <div class="icon-circle">
+        <span class="material-icons">cloud_upload</span>
+      </div>
+
+      <h2>Upload Medical Report</h2>
+
+      <p>
+        Securely encrypt and store patient reports
+      </p>
+
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label>Patient Username</label>
+        <input
+          [(ngModel)]="patientUsername"
+          name="patientUsername"
+          placeholder="e.g. patient1"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label>Report Title</label>
+        <input
+          [(ngModel)]="title"
+          name="title"
+          placeholder="Enter report title"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label>Secret Key</label>
+        <input
+          type="password"
+          [(ngModel)]="secretKey"
+          name="secretKey"
+          placeholder="Enter encryption key"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label>Report File</label>
+
+        <div class="file-upload">
+          <span class="material-icons">description</span>
+          <input
+            type="file"
+            (change)="onFileSelected($event)"
+            required>
+        </div>
+      </div>
+
+      <button type="submit">
+        <span class="material-icons">lock</span>
+        Upload & Encrypt
+      </button>
+
+    </form>
+
+    <p class="message">{{ message }}</p>
+
+  </div>
+
+</div>

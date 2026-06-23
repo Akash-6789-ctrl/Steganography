@@ -1,0 +1,64 @@
+<div class="appointments-section">
+  <h3>My Appointments</h3>
+
+  <div class="card appointment-card" *ngFor="let appointment of appointments">
+
+    <h4>Dr. {{ appointment.doctor?.name }}</h4>
+
+    <p>
+      <strong>Date:</strong>
+      {{ appointment.appointmentDate }}
+    </p>
+
+    <p>
+      <strong>Time:</strong>
+      {{ appointment.appointmentTime }}
+    </p>
+
+    <p>
+      <strong>Reason:</strong>
+      {{ appointment.reason }}
+    </p>
+
+    <p>
+      <strong>Status:</strong>
+
+      <span class="approved" *ngIf="appointment.status === 'APPROVED'">
+        APPROVED
+      </span>
+
+      <span class="pending" *ngIf="appointment.status === 'PENDING'">
+        PENDING
+      </span>
+
+      <span class="rejected" *ngIf="appointment.status === 'REJECTED'">
+        REJECTED
+      </span>
+
+    </p>
+
+    <a
+      *ngIf="appointment.status === 'APPROVED' && appointment.meetingLink"
+      [href]="appointment.meetingLink"
+      target="_blank"
+      class="join-btn">
+
+      🎥 Join Consultation
+
+    </a>
+
+    <button
+      *ngIf="
+        appointment.status === 'APPROVED' ||
+        appointment.status === 'REJECTED'
+      "
+      class="delete-btn"
+      (click)="deleteAppointment(appointment.id)">
+
+      Delete Appointment
+
+    </button>
+
+  </div>
+
+</div>

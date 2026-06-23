@@ -1,0 +1,35 @@
+<section class="hero">
+  <div class="hero-content">
+    <h1>
+      Find & Book the Best <span>Doctors</span>
+    </h1>
+
+    <p>
+      Consult experienced doctors online or visit top clinics near you.
+      Fast, easy and secure healthcare at your fingertips.
+    </p>
+
+    <div class="search-box">
+      <input
+        type="text"
+        placeholder="Search doctors, specialties, hospitals..."
+        [(ngModel)]="searchText"
+        (keyup.enter)="onSearch()"
+      />
+
+      <button class="search-btn" (click)="onSearch()">
+        Search
+      </button>
+    </div>
+
+    <div class="buttons">
+      <button type="button" class="primary-btn" (click)="goToBookAppointment()">
+        Book Appointment
+      </button>
+
+      <button type="button" class="secondary-btn" (click)="goToVideoConsult()">
+        Video Consult
+      </button>
+    </div>
+  </div>
+</section>

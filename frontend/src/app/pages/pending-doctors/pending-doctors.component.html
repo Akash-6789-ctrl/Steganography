@@ -1,0 +1,11 @@
+<h2>Pending Doctor Requests</h2>
+
+<div *ngFor="let doctor of pendingDoctors">
+
+  <p>{{ doctor.fullName }}</p>
+
+  <button (click)="approve(doctor.id)">
+    Approve
+  </button>
+
+</div>
