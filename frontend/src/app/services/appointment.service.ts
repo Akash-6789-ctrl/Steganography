@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class AppointmentService {
-
-  private apiUrl = 'http://localhost:8080/appointments';
+  private apiUrl =
+    "http://https://steganography-backend-mtqy.onrender.com/appointments";
 
   constructor(private http: HttpClient) {}
 
@@ -42,8 +42,8 @@ export class AppointmentService {
   }
 
   deleteAppointment(id: number) {
-  return this.http.delete(
-    `http://localhost:8080/appointments/${id}`
-  );
-}
+    return this.http.delete(
+      `http://https://steganography-backend-mtqy.onrender.com/appointments/${id}`,
+    );
+  }
 }

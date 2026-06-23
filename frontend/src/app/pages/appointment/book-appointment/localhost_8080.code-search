@@ -1,0 +1,69 @@
+# Query: localhost:8080
+# ContextLines: 1
+
+14 results - 9 files
+
+frontend\src\app\pages\appointment\book-appointment\book-appointment.component.ts:
+  21    ngOnInit() {
+  22:     this.http.get('https://steganography-backend-mtqy.onrender.com/api/doctors')
+  23        .subscribe((res: any) => this.doctors = res);
+
+  38  
+  39:   this.http.post('https://steganography-backend-mtqy.onrender.com/appointments/book', body)
+  40      .subscribe({
+
+frontend\src\app\pages\appointment\doctor-appointments\doctor-appointments.component.ts:
+  36      this.http
+  37:       .get(`https://steganography-backend-mtqy.onrender.com/appointments/doctor/${id}`)
+  38        .subscribe((res: any) => (this.appointments = res));
+
+  42    this.http
+  43:     .put(`http://localhost:8080/appointments/approve/${id}`, {})
+  44      .subscribe(() => this.ngOnInit());
+
+  48    this.http
+  49:     .put(`http://localhost:8080/appointments/${id}/reject`, {})
+  50      .subscribe(() => this.ngOnInit());
+
+frontend\src\app\pages\contact\contact.component.ts:
+  28      this.http.post(
+  29:       'http://localhost:8080/api/contact',
+  30        this.contact
+
+frontend\src\app\pages\pending-doctors\pending-doctors.component.ts:
+  22    this.http.get<any[]>(
+  23:     'http://localhost:8080/api/admin/pending-doctors'
+  24    ).subscribe({
+
+  36      this.http.put(
+  37:       `http://localhost:8080/api/admin/approve-doctor/${id}`,
+  38        {}
+
+frontend\src\app\services\api.service.ts:
+  6  export class ApiService {
+  7:   private baseUrl = 'http://localhost:8080/api';
+  8  
+
+frontend\src\app\services\appointment.service.ts:
+   9  
+  10:   private apiUrl = 'http://localhost:8080/appointments';
+  11  
+
+  45    return this.http.delete(
+  46:     `http://localhost:8080/appointments/${id}`
+  47    );
+
+frontend\src\app\services\clinic.service.ts:
+   9    private api =
+  10:     'http://localhost:8080/api/clinics';
+  11  
+
+frontend\src\app\services\doctor.service.ts:
+  8  export class DoctorService {
+  9:   private apiUrl = "http://localhost:8080/api/doctors";
+  10  
+
+frontend\src\app\services\patient.service.ts:
+   9  
+  10:   private apiUrl = 'http://localhost:8080/api/patients';
+  11  

@@ -6,7 +6,8 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class DoctorService {
-  private apiUrl = "http://localhost:8080/api/doctors";
+  private apiUrl =
+    "http://https://steganography-backend-mtqy.onrender.com/api/doctors";
 
   constructor(private http: HttpClient) {}
 
@@ -39,5 +40,4 @@ export class DoctorService {
   searchDoctors(query: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/search?query=${query}`);
   }
-
 }

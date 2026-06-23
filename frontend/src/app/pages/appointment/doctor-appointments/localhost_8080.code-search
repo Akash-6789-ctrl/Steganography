@@ -1,0 +1,61 @@
+# Query: localhost:8080
+# ContextLines: 1
+
+12 results - 9 files
+
+frontend\src\app\pages\appointment\book-appointment\book-appointment.component.ts:
+  21    ngOnInit() {
+  22:     this.http.get('http://steganography-backend-mtqy.onrender.com/api/doctors')
+  23        .subscribe((res: any) => this.doctors = res);
+
+  38  
+  39:   this.http.post('http://steganography-backend-mtqy.onrender.com/appointments/book', body)
+  40      .subscribe({
+
+frontend\src\app\pages\appointment\doctor-appointments\doctor-appointments.component.ts:
+  36      this.http
+  37:       .get(`http://steganography-backend-mtqy.onrender.com/appointments/doctor/${id}`)
+  38        .subscribe((res: any) => (this.appointments = res));
+
+frontend\src\app\pages\contact\contact.component.ts:
+  28      this.http.post(
+  29:       'http://steganography-backend-mtqy.onrender.com/api/contact',
+  30        this.contact
+
+frontend\src\app\pages\pending-doctors\pending-doctors.component.ts:
+  22    this.http.get<any[]>(
+  23:     'http://steganography-backend-mtqy.onrender.com/api/admin/pending-doctors'
+  24    ).subscribe({
+
+  36      this.http.put(
+  37:       `http://steganography-backend-mtqy.onrender.com/api/admin/approve-doctor/${id}`,
+  38        {}
+
+frontend\src\app\services\api.service.ts:
+  6  export class ApiService {
+  7:   private baseUrl = 'http://steganography-backend-mtqy.onrender.com/api';
+  8  
+
+frontend\src\app\services\appointment.service.ts:
+   9  
+  10:   private apiUrl = 'http://steganography-backend-mtqy.onrender.com/appointments';
+  11  
+
+  45    return this.http.delete(
+  46:     `http://steganography-backend-mtqy.onrender.com/appointments/${id}`
+  47    );
+
+frontend\src\app\services\clinic.service.ts:
+   9    private api =
+  10:     'http://steganography-backend-mtqy.onrender.com/api/clinics';
+  11  
+
+frontend\src\app\services\doctor.service.ts:
+  8  export class DoctorService {
+  9:   private apiUrl = "http://steganography-backend-mtqy.onrender.com/api/doctors";
+  10  
+
+frontend\src\app\services\patient.service.ts:
+   9  
+  10:   private apiUrl = 'http://steganography-backend-mtqy.onrender.com/api/patients';
+  11  

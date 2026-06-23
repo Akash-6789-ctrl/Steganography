@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class ApiService {
-  private baseUrl = 'http://localhost:8080/api';
+  private baseUrl =
+    "http://https://steganography-backend-mtqy.onrender.com/api";
 
   constructor(private http: HttpClient) {}
 
@@ -17,7 +18,9 @@ export class ApiService {
   }
 
   getUserByUsername(username: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/users/by-username/${encodeURIComponent(username)}`);
+    return this.http.get(
+      `${this.baseUrl}/users/by-username/${encodeURIComponent(username)}`,
+    );
   }
 
   uploadReport(formData: FormData): Observable<any> {
@@ -30,7 +33,9 @@ export class ApiService {
 
   decryptReport(reportId: number, secretKey: string): Observable<any> {
     const params = new URLSearchParams({ secretKey });
-    return this.http.post(`${this.baseUrl}/reports/${reportId}/decrypt?${params.toString()}`, {});
+    return this.http.post(
+      `${this.baseUrl}/reports/${reportId}/decrypt?${params.toString()}`,
+      {},
+    );
   }
 }
-

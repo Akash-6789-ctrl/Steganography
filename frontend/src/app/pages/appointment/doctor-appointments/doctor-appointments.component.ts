@@ -34,19 +34,19 @@ export class DoctorAppointmentsComponent {
 
   loadAppointments(id: number) {
     this.http
-      .get(`http://localhost:8080/appointments/doctor/${id}`)
+      .get(`http://https://steganography-backend-mtqy.onrender.com/appointments/doctor/${id}`)
       .subscribe((res: any) => (this.appointments = res));
   }
 
  approve(id: number) {
   this.http
-    .put(`http://localhost:8080/appointments/approve/${id}`, {})
+    .put(`https://steganography-backend-mtqy.onrender.com/appointments/approve/${id}`, {})
     .subscribe(() => this.ngOnInit());
 }
 
 reject(id: number) {
   this.http
-    .put(`http://localhost:8080/appointments/${id}/reject`, {})
+    ..put(`https://steganography-backend-mtqy.onrender.com/appointments/${id}/reject`, {})
     .subscribe(() => this.ngOnInit());
 }
 }

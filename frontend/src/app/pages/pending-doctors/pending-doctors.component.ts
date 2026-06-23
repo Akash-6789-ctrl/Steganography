@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { CommonModule } from "@angular/common";
 
 @Component({
-  selector: 'app-pending-doctors',
+  selector: "app-pending-doctors",
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './pending-doctors.component.html'
+  templateUrl: "./pending-doctors.component.html",
 })
 export class PendingDoctorsComponent implements OnInit {
-
   pendingDoctors: any[] = [];
 
   constructor(private http: HttpClient) {}
@@ -19,25 +18,29 @@ export class PendingDoctorsComponent implements OnInit {
   }
 
   loadDoctors() {
-  this.http.get<any[]>(
-    'http://localhost:8080/api/admin/pending-doctors'
-  ).subscribe({
-    next: (data) => {
-      console.log('Doctors:', data);
-      this.pendingDoctors = data;
-    },
-    error: (err) => {
-      console.log('ERROR:', err);
-    }
-  });
-}
+    this.http
+      .get<
+        any[]
+      >("http://https://steganography-backend-mtqy.onrender.com/api/admin/pending-doctors")
+      .subscribe({
+        next: (data) => {
+          console.log("Doctors:", data);
+          this.pendingDoctors = data;
+        },
+        error: (err) => {
+          console.log("ERROR:", err);
+        },
+      });
+  }
 
   approve(id: number) {
-    this.http.put(
-      `http://localhost:8080/api/admin/approve-doctor/${id}`,
-      {}
-    ).subscribe(() => {
-      this.loadDoctors();
-    });
+    this.http
+      .put(
+        `http://https://steganography-backend-mtqy.onrender.com/api/admin/approve-doctor/${id}`,
+        {},
+      )
+      .subscribe(() => {
+        this.loadDoctors();
+      });
   }
 }
