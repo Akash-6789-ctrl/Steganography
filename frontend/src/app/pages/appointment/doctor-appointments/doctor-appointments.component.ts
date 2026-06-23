@@ -46,7 +46,7 @@ export class DoctorAppointmentsComponent {
 
 reject(id: number) {
   this.http
-    ..put(`https://steganography-backend-mtqy.onrender.com/appointments/${id}/reject`, {})
+    .put(`https://steganography-backend-mtqy.onrender.com/appointments/${id}/reject`, {})
     .subscribe(() => this.ngOnInit());
 }
 }
